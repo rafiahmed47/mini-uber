@@ -1,0 +1,15 @@
+.cards{
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+    margin: 20px 20px;
+    border-radius: 5px;
+}
+.cards img{
+    height: 200px;
+    width: 100%;
+}
+#cardbtn{
+    background-color: darkgray;
+    text-decoration: none;
+}

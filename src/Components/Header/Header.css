@@ -1,0 +1,18 @@
+.header {
+    text-align: center;
+}
+.header nav {
+    line-height: 50px;
+}
+nav a{
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    margin: 40px;
+    padding: 5px 10px;
+}
+#btn{
+    background-color: #FF6E40;
+    color: white;
+    border-radius: 5px;
+}
