@@ -1,5 +1,5 @@
 import './App.css';
-import React from "react";
+import React, { createContext, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,12 +10,15 @@ import Home from './Components/Home/Home';
 import Destination from './Components/Destination/Destination';
 import Blog from './Components/Blog/Blog';
 import Contact from './Components/Contact/Contact';
-import Authentication from './Components/Authentication/Authentication';
+import Login from './Components/Login/Login';
 import NoMatch from './Components/NoMatch/NoMatch';
+export const userContext = createContext()
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState()
   return (
-      <Router >
+      <userContext.provider value={[loggedInUser, setLoggedInUser]}>
+        <Router >
         <Header />
         <Switch>
           <Route path="/home">
@@ -30,17 +33,18 @@ function App() {
           <Route path="/blog">
             <Blog />
             </Route>
-            <Route path="/authentication">
-              <Authentication />
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/">
             <Home />
             </Route>
-            <Route path="*">
+            <Route path='*'>
             <NoMatch />
             </Route>
         </Switch>
       </Router>
+      </userContext.provider>
   );
 }
 
